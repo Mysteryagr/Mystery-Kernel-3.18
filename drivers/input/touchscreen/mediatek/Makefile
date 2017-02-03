@@ -1,0 +1,29 @@
+subdir-ccflags-y += 
+ccflags-y += -I$(srctree)/drivers/misc/mediatek/include/mt-plat/
+ccflags-y += -I$(srctree)/drivers/input/touchscreen/mediatek
+# In case the platform does NOT support this type of sensors
+obj-y   +=  mtk_tpd.o
+obj-y   +=  tpd_button.o
+obj-y   +=  tpd_calibrate.o
+obj-y   +=  tpd_debug.o
+obj-y   +=  tpd_default.o
+obj-y   +=  tpd_init.o
+obj-y   +=  tpd_misc.o
+obj-y   +=  tpd_setting.o
+
+obj-$(CONFIG_TOUCHSCREEN_MTK_GT1151)	+=  GT1151/
+obj-$(CONFIG_TOUCHSCREEN_MTK_GT910)	+=  GT910/
+obj-$(CONFIG_TOUCHSCREEN_MTK_GT9XXTB_HOTKNOT)	+=  GT9XXTB_hotknot/
+obj-$(CONFIG_TOUCHSCREEN_MTK_SYNAPTICS_I2C_RMI4)	+=  synaptics_i2c_rmi4/
+obj-$(CONFIG_TOUCHSCREEN_MTK_GT928)	+=  GT928/
+obj-$(CONFIG_TOUCHSCREEN_MTK_GT9XX_HOTKNOT_SCP)	+=  GT9XX_hotknot_scp/
+obj-$(CONFIG_TOUCHSCREEN_MTK_GT911)	+=  GT911/
+obj-$(CONFIG_TOUCHSCREEN_MTK_FT5X0X)	+=  ft5x0x/
+obj-$(CONFIG_TOUCHSCREEN_MTK_FT3427)	+=  ft3427/
+obj-$(CONFIG_TOUCHSCREEN_MTK_FT5436)	+=  ft5436/
+obj-$(CONFIG_TOUCHSCREEN_MTK_MSG2238)	+=  msg2238/
+obj-$(CONFIG_TOUCHSCREEN_MTK_MSG2238_D5170)	+=  msg2238_d5170/
+obj-$(CONFIG_RGK_GT9XX_HOTKNOT_D5028)	+=  GT9XX_hotknot_D5028/
+obj-$(CONFIG_TOUCHSCREEN_MTK_MSG2238_D5170_TELETALK)	+=  msg2238_d5170_teletalk/
+obj-$(CONFIG_TOUCHSCREEN_MTK_FT6336_D5132)	+=  ft6336_d5132/
+obj-$(CONFIG_TOUCHSCREEN_MTK_MSG2238_D5132)	+=  msg2238_d5132/
