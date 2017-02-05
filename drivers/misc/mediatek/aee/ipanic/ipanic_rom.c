@@ -201,7 +201,7 @@ static int ipanic_alog_buffer(void *data, unsigned char *buffer, size_t sz_buf)
 	return rc;
 }
 
-inline int ipanic_func_write(fn_next next, void *data, int off, int total, int encrypt)
+static inline int ipanic_func_write(fn_next next, void *data, int off, int total, int encrypt)
 {
 	int errno = 0;
 	size_t size;
@@ -248,7 +248,7 @@ inline int ipanic_func_write(fn_next next, void *data, int off, int total, int e
 	return errno;
 }
 
-inline int ipanic_next_write(fn_next next, void *data, int off, int total, int encrypt)
+static inline int ipanic_next_write(fn_next next, void *data, int off, int total, int encrypt)
 {
 	return ipanic_func_write(next, data, off, total, encrypt);
 }

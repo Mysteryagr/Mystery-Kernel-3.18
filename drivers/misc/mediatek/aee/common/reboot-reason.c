@@ -215,7 +215,7 @@ inline void aee_print_regs(struct pt_regs *regs)
 }
 
 #define AEE_MAX_EXCP_FRAME	32
-inline void aee_print_bt(struct pt_regs *regs)
+static inline void aee_print_bt(struct pt_regs *regs)
 {
 	int i;
 	unsigned long high, bottom, fp;
@@ -258,7 +258,7 @@ inline void aee_print_bt(struct pt_regs *regs)
 	aee_nested_printf("\n");
 }
 
-inline int aee_nested_save_stack(struct pt_regs *regs)
+static inline int aee_nested_save_stack(struct pt_regs *regs)
 {
 	int len = 0;
 
