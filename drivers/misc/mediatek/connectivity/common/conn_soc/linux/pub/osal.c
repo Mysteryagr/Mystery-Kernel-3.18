@@ -469,7 +469,7 @@ INT32 osal_event_deinit(P_OSAL_EVENT pEvent)
 	return 0;
 }
 
-_osal_inline_ long osal_wait_for_event_bit_set(P_OSAL_EVENT pEvent, unsigned long *pState, UINT32 bitOffset)
+static _osal_inline_ long osal_wait_for_event_bit_set(P_OSAL_EVENT pEvent, unsigned long *pState, UINT32 bitOffset)
 {
 	UINT32 ms = pEvent->timeoutValue;
 
@@ -482,7 +482,7 @@ _osal_inline_ long osal_wait_for_event_bit_set(P_OSAL_EVENT pEvent, unsigned lon
 
 }
 
-_osal_inline_ long osal_wait_for_event_bit_clr(P_OSAL_EVENT pEvent, unsigned long *pState, UINT32 bitOffset)
+static _osal_inline_ long osal_wait_for_event_bit_clr(P_OSAL_EVENT pEvent, unsigned long *pState, UINT32 bitOffset)
 {
 	UINT32 ms = pEvent->timeoutValue;
 

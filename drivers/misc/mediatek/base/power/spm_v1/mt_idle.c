@@ -1715,13 +1715,13 @@ void dump_idle_cnt_in_interval(int cpu)
 	idle_cnt_dump_prev_time = idle_cnt_dump_curr_time;
 }
 
-inline void idle_ratio_calc_start(int type, int cpu)
+static inline void idle_ratio_calc_start(int type, int cpu)
 {
 	if (type >= 0 && type < NR_TYPES && cpu == 0)
 		idle_ratio_start_time[type] = idle_get_current_time_ms();
 }
 
-inline void idle_ratio_calc_stop(int type, int cpu)
+static inline void idle_ratio_calc_stop(int type, int cpu)
 {
 	if (type >= 0 && type < NR_TYPES && cpu == 0)
 		idle_ratio_value[type] += (idle_get_current_time_ms() - idle_ratio_start_time[type]);
