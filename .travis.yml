@@ -1,7 +1,7 @@
 language: C
 dist: trusty
 before_install:
-  - git clone https://github.com/ArchiDroid/Toolchain.git toolchain
+  - git clone https://github.com/ArchiDroid/Toolchain.git -b linaro-5.2 toolchain
   - export CROSS_COMPILE=$PWD/toolchain/bin/arm-eabi-
   - sudo apt-get -qq update
   - sudo apt-get install -y build-essential kernel-package libncurses5-dev bzip2
@@ -16,8 +16,9 @@ script:
 
 deploy:
   provider: releases
-  api_key: "$GIT_OAUTH_TOKEN_RAK"
+  api_key: "$GIT_OAUTH_TOKEN_RAHMY"
   file: "$PWD/out/arch/arm/boot/zImage-dtb"
   skip_cleanup: true
   on:
     tags: true
+    all_branches: true
