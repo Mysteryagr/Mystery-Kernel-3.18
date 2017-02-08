@@ -20,6 +20,9 @@
 #endif
 
 LCM_DRIVER *lcm_driver_list[] = {
+#if defined(NT35521_DSI_VDO_YUSHUN_CMI_HD720)
+	&nt35521_dsi_vdo_yushun_cmi_hd720_lcm_drv,
+#endif
 #if defined(NT35521_DSI_VDO_DJ_CMI_HD720)
 	&nt35521_dsi_vdo_dj_cmi_hd720_lcm_drv,
 #endif

@@ -6,6 +6,7 @@
 #if defined(MTK_LCM_DEVICE_TREE_SUPPORT)
 extern LCM_DRIVER lcm_common_drv;
 #else
+extern LCM_DRIVER nt35521_dsi_vdo_yushun_cmi_hd720_lcm_drv;
 extern LCM_DRIVER nt35521_dsi_vdo_dj_cmi_hd720_lcm_drv;
 extern LCM_DRIVER hx8394d_dsi_vdo_truly_hd720_lcm_drv;
 extern LCM_DRIVER nt35521_vdo_yushun_hd720_d5130_lcm_drv;
