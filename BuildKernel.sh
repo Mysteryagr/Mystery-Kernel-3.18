@@ -18,7 +18,11 @@ export ARCH=arm ARCH_MTK_PLATFORM=mt6580
 #make mrproper
 #Or simply delete out directory to clean source
 
-make -C $PWD O=$PWD/out ARCH=arm d5028m_blu_gmo_defconfig
+#Defconfig for Blu G
+#make -C $PWD O=$PWD/out ARCH=arm d5028m_blu_gmo_defconfig
+
+#Defconfig for Infinix Hot 2
+make -C $PWD O=$PWD/out ARCH=arm x510_defconfig
 
 #Edit the number according to the number of CPUs you have in your PC:
 make -j4 -C $PWD O=$PWD/out ARCH=arm
