@@ -8,6 +8,7 @@ obj-$(CONFIG_MTK_BMA050)   +=  bma050/
 obj-$(CONFIG_MTK_BMA2XX)   +=  bma2xx/
 obj-$(CONFIG_MTK_BMA050_NEW)   +=  bma050-new/
 obj-$(CONFIG_MTK_BMA222E)   +=  bma222E/
+obj-$(CONFIG_MTK_BMA222)   +=  bma222/
 obj-$(CONFIG_MTK_BMA222E_NEW)   +=  bma222E-new/
 obj-$(CONFIG_MTK_MPU6050G)   +=  mpu6050g/
 obj-$(CONFIG_MTK_MPU6050G_NEW)   +=  mpu6050g-new/
