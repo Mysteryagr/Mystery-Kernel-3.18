@@ -30,7 +30,7 @@ subdir-ccflags-$(CONFIG_MTK_LENS_LC898212XDAF_SUPPORT) += -I$(MTK_CUSTOM_PATH)/l
 
 obj-y      += main_lens.o
 obj-y      += sub_lens.o
-#obj-$(CONFIG_MTK_LENS_FM50AF_SUPPORT)      += common/fm50af/
+obj-$(CONFIG_MTK_LENS_FM50AF_SUPPORT)      += common/fm50af/
 obj-$(CONFIG_MTK_LENS_DW9714AF_SUPPORT)    += common/dw9714af/
 obj-$(CONFIG_MTK_LENS_AD5820AF_SUPPORT)    += common/ad5820af/
 obj-$(CONFIG_MTK_LENS_LC898212AF_SUPPORT)  += common/lc898212af/
