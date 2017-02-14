@@ -1,7 +1,4 @@
-
 include $(srctree)/drivers/misc/mediatek/Makefile.custom
+obj-y := mtk_kpd_bkl.o
 
 
-obj-y   +=  sound/
-obj-y   +=  keypad/
-#obj-y   +=  power/
