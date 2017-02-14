@@ -50,6 +50,7 @@
 #include <linux/proc_fs.h>
 #include <asm/uaccess.h>
 
+#define TPD_I2C_NUMBER		    I2C_CAP_TOUCH_CHANNEL
 #ifdef CONFIG_MTK_I2C_EXTENSION
 #define TPD_SUPPORT_I2C_DMA         1	/* if gt9l, better enable it if hardware platform supported*/
 #else
