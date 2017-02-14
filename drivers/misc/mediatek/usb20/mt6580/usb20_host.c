@@ -40,7 +40,7 @@
 
 #include <mt-plat/mt_boot_common.h>
 #ifdef CONFIG_USB_MTK_OTG
-
+extern struct musb *mtk_musb;
 #endif
 #ifdef CONFIG_OF
 struct device_node		*usb_node;
@@ -87,9 +87,18 @@ module_param(delay_time1, int, 0644);
 u32 iddig_cnt = 0;
 module_param(iddig_cnt, int, 0644);
 
+//USB OTG
+//#define CONFIG_MTK_BQ24158_SUPPORT
+extern void bq24158_set_opa_mode(kal_uint32 val);
+extern void bq24158_set_oreg(kal_uint32 val);
+extern void bq24158_set_otg_pl(kal_uint32 val);
+extern void bq24158_set_otg_en(kal_uint32 val);
+extern kal_uint32 bq24158_config_interface_liao (kal_uint8 RegNum, kal_uint8 val);
+//USB OTG
+
 void mt_usb_set_vbus(struct musb *musb, int is_on)
 {
-	DBG(0, "mt65xx_usb20_vbus++,is_on=%d\r\n", is_on);
+	printk("mt65xx_usb20_vbus++,is_on=%d\r\n", is_on);
 #ifndef FPGA_PLATFORM
     #if defined(CONFIG_MTK_DUAL_INPUT_CHARGER_SUPPORT) && defined(MTK_LOAD_SWITCH_FPF3040)
 	if (is_on) {
@@ -144,6 +153,7 @@ void mt_usb_set_vbus(struct musb *musb, int is_on)
 	#else
 		mt_set_gpio_mode(GPIO_OTG_DRVVBUS_PIN, GPIO_OTG_DRVVBUS_PIN_M_GPIO);
 		mt_set_gpio_out(GPIO_OTG_DRVVBUS_PIN, GPIO_OUT_ONE);
+printk("mt65xx_usb20_vbus++,is_on2=%d\r\n",is_on);
 	#endif
 	#endif
 	} else {
@@ -199,7 +209,7 @@ int mt_usb_get_vbus_status(struct musb *musb)
 
 void mt_usb_init_drvvbus(void)
 {
-#if !(defined(SWITCH_CHARGER) || defined(FPGA_PLATFORM))
+//#if !(defined(SWITCH_CHARGER) || defined(FPGA_PLATFORM))
 	#ifdef CONFIG_OF
 	#if defined(CONFIG_MTK_LEGACY)
 	mt_set_gpio_mode(drvvbus_pin, drvvbus_pin_mode); /* should set GPIO2 as gpio mode. */
@@ -233,12 +243,13 @@ void mt_usb_init_drvvbus(void)
 	pr_debug("****%s:%d end Init Drive VBUS KS!!!!!\n", __func__, __LINE__);
 	#endif
 	#else
+	printk("DANIL GPIO_OTG_DRVVBUS_PIN = %d||%d",GPIO_OTG_DRVVBUS_PIN,IDDIG_EINT_PIN);
 	mt_set_gpio_mode(GPIO_OTG_DRVVBUS_PIN, GPIO_OTG_DRVVBUS_PIN_M_GPIO); /* should set GPIO2 as gpio mode. */
 	mt_set_gpio_dir(GPIO_OTG_DRVVBUS_PIN, GPIO_DIR_OUT);
 	mt_get_gpio_pull_enable(GPIO_OTG_DRVVBUS_PIN);
 	mt_set_gpio_pull_select(GPIO_OTG_DRVVBUS_PIN, GPIO_PULL_UP);
 #endif
-#endif
+//#endif
 }
 
 #if defined(CONFIG_USBIF_COMPLIANCE)
