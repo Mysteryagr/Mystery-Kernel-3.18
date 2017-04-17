@@ -761,8 +761,13 @@
 		};
 			touch_panel: touch_panel {
 			compatible = "mediatek, TOUCH_PANEL-eint";
+			vtouch-supply = <&mt_pmic_vgp1_ldo_reg>;
 		};
-			
+			bq24158:bq24158@6a {
+			status = "okay";
+			compatible = "bq24158";
+			reg = <0x6a>;
+		};
 		accdet: accdet {
 			compatible = "mediatek,mt6580-accdet";
 		};
