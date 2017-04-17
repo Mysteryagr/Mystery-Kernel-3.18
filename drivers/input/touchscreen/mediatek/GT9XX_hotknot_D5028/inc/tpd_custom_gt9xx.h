@@ -83,14 +83,13 @@
 
 /* Pre-defined definition */
 
-#define TPD_KEY_COUNT   4
+#define TPD_KEY_COUNT   3
 #define key_1           120,1380              //auto define  
 #define key_2           360,1380
 #define key_3           540,1380
-#define key_4           420,850
 
-#define TPD_KEYS        {KEY_MENU, KEY_HOMEPAGE, KEY_BACK, KEY_SEARCH}
-#define TPD_KEYS_DIM    {{key_1,50,30},{key_2,50,30},{key_3,50,30},{key_4,50,30}}
+#define TPD_KEYS        {KEY_MENU, KEY_HOMEPAGE, KEY_BACK}
+#define TPD_KEYS_DIM    {{key_1,50,30},{key_2,50,30},{key_3,50,30}}
 
 //***************************PART1:ON/OFF define*******************************
 #define GTP_CUSTOM_CFG        0
@@ -367,7 +366,7 @@ typedef enum
 #define GTP_DMA_MAX_I2C_TRANSFER_SIZE   (GTP_DMA_MAX_TRANSACTION_LENGTH - GTP_ADDR_LENGTH)
 #define MAX_TRANSACTION_LENGTH        8
 #define TPD_I2C_NUMBER				  1
-#define I2C_MASTER_CLOCK              400
+#define I2C_MASTER_CLOCK              300
 #define MAX_I2C_TRANSFER_SIZE         (MAX_TRANSACTION_LENGTH - GTP_ADDR_LENGTH)
 #define TPD_MAX_RESET_COUNT           3
 #define TPD_CALIBRATION_MATRIX        {962,0,0,0,1600,0,0,0};
