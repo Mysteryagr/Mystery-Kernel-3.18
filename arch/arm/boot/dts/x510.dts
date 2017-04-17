@@ -465,7 +465,7 @@ use-tpd-button = <1>;
 	pinctrl-4 = <&gpio10_mode2_drvvbus_high>;
 	status = "okay";
 };
-/* USB GPIO Kernal Standardization end */2
+/* USB GPIO Kernal Standardization end */
 
 /* AUDIO GPIO standardization */
 &audgpio {
