@@ -3,7 +3,7 @@
 #Mysteryagr
 #Compile kernel with a build script to make things simple
 
-mkdir -p out
+#mkdir -p out
 
 #Change toolchain path before using build script!
 #export CROSS_COMPILE=~/toolchains/arm-eabi-linaro-4.7.3/bin/arm-eabi-
@@ -22,7 +22,9 @@ export ARCH=arm ARCH_MTK_PLATFORM=mt6580
 #make -C $PWD O=$PWD/out ARCH=arm d5028m_blu_gmo_defconfig
 
 #Defconfig for Infinix Hot 2
-make -C $PWD O=$PWD/out ARCH=arm x510_defconfig
+#make -C $PWD O=$PWD/out ARCH=arm x510_defconfig
+make ARCH=arm x510_defconfig
 
 #Edit the number according to the number of CPUs you have in your PC:
-make -j4 -C $PWD O=$PWD/out ARCH=arm
+#make -j4 -C $PWD O=$PWD/out ARCH=arm
+make -j4 ARCH=arm
