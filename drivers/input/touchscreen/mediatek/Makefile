@@ -1,4 +1,4 @@
-subdir-ccflags-y += 
+subdir-ccflags-y += -Wno-error=date-time
 ccflags-y += -I$(srctree)/drivers/misc/mediatek/include/mt-plat/
 ccflags-y += -I$(srctree)/drivers/input/touchscreen/mediatek
 # In case the platform does NOT support this type of sensors
