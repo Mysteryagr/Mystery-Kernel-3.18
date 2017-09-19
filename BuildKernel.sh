@@ -21,9 +21,9 @@ export ARCH=arm ARCH_MTK_PLATFORM=mt6580
 #Defconfig for Blu G
 #make -C $PWD O=$PWD/out ARCH=arm d5028m_blu_gmo_defconfig
 
-#Defconfig for Infinix Hot 2
-#make -C $PWD O=$PWD/out ARCH=arm x510_defconfig
-make ARCH=arm x510_defconfig
+#Defconfig for Infinix Hot 3
+#make -C $PWD O=$PWD/out ARCH=arm x554_defconfig
+make ARCH=arm x554_defconfig
 
 #Edit the number according to the number of CPUs you have in your PC:
 #make -j4 -C $PWD O=$PWD/out ARCH=arm
